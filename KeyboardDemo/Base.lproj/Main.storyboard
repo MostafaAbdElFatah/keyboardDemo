@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeyboardDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-lg-SR3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KeyBoard Delegete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UQ-rd-vrK">
+                                        <rect key="frame" x="213" y="15" width="175" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="W00-Cc-Gcn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.052636142079999997" green="0.18318385009999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0UQ-rd-vrK" firstAttribute="centerX" secondItem="q3p-lg-SR3" secondAttribute="centerX" id="85C-78-Gcj"/>
+                                    <constraint firstItem="0UQ-rd-vrK" firstAttribute="centerY" secondItem="q3p-lg-SR3" secondAttribute="centerY" id="Zx1-NW-6hN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-JS-2sg">
+                                <rect key="frame" x="20" y="130" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWH-dw-C6n">
+                                <rect key="frame" x="277" y="179" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0081993333544552183" green="0.021941381477485256" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJm-jy-6JZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-1o-QME">
+                                <rect key="frame" x="20" y="71" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zl4-mv-A7B"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVX-LX-Mib">
+                                <rect key="frame" x="238" y="295" width="124" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.063417575982814278" green="0.097108927754070984" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="Y5C-43-fGA"/>
+                                </constraints>
+                                <state key="normal" title="Current Time">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CurTime_btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fag-lx-5mf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8L-ts-GC1">
+                                <rect key="frame" x="20" y="226" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lwa-JS-2sg" firstAttribute="top" secondItem="ne3-1o-QME" secondAttribute="bottom" constant="29" id="0Cu-XZ-osQ"/>
+                            <constraint firstItem="q3p-lg-SR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Ey-Su-kjq"/>
+                            <constraint firstItem="PVX-LX-Mib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BGD-ZV-b3R"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Lwa-JS-2sg" secondAttribute="leading" id="BjR-Fs-BVu"/>
+                            <constraint firstItem="sWH-dw-C6n" firstAttribute="top" secondItem="Lwa-JS-2sg" secondAttribute="bottom" constant="28" id="E21-Te-0io"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ne3-1o-QME" secondAttribute="leading" id="GL1-yb-Pgr"/>
+                            <constraint firstItem="q3p-lg-SR3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="J71-qq-etm"/>
+                            <constraint firstItem="ne3-1o-QME" firstAttribute="top" secondItem="q3p-lg-SR3" secondAttribute="bottom" constant="20" id="KJJ-Fp-cg7"/>
+                            <constraint firstItem="q3p-lg-SR3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OqK-ah-TFd"/>
+                            <constraint firstItem="f8L-ts-GC1" firstAttribute="top" secondItem="sWH-dw-C6n" secondAttribute="bottom" constant="17" id="PE4-ue-ctr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ne3-1o-QME" secondAttribute="trailing" id="Sql-fb-gLV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="f8L-ts-GC1" secondAttribute="leading" id="XE1-ej-5cr"/>
+                            <constraint firstItem="PVX-LX-Mib" firstAttribute="top" secondItem="f8L-ts-GC1" secondAttribute="bottom" constant="48" id="aEm-lc-NFb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f8L-ts-GC1" secondAttribute="trailing" id="bD6-lk-VW5"/>
+                            <constraint firstAttribute="bottom" secondItem="q3p-lg-SR3" secondAttribute="bottom" constant="549" id="hlz-gx-Ras"/>
+                            <constraint firstItem="sWH-dw-C6n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oNF-lb-3pa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lwa-JS-2sg" secondAttribute="trailing" id="wBt-l0-DiJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="name" destination="ne3-1o-QME" id="UdU-9F-mbM"/>
+                        <outlet property="sayHello" destination="Lwa-JS-2sg" id="645-bd-rMG"/>
+                        <outlet property="timeLabel" destination="f8L-ts-GC1" id="bau-uR-zvl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="287"/>
         </scene>
     </scenes>
 </document>
