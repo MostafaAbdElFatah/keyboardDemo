@@ -17,28 +17,33 @@ class ViewController: UIViewController , UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.sayHello.text = "hello, " + self.name.text!
         self.name.resignFirstResponder()
         return false
     }
-    @IBAction func btn_Clicked(sender: UIButton) {
+    
+    @IBAction func btn_Clicked(_ sender: UIButton) {
         self.sayHello.text = "hello, " + self.name.text!
         self.name.resignFirstResponder()
     }
 
-    @IBAction func CurTime_btnClicked(sender: UIButton) {
-        let now = NSDate()
-        let formatter = NSDateFormatter()
+    @IBAction func CurTime_btnClicked(_ sender: UIButton) {
+        let now = Date()
+        let formatter = DateFormatter()
         formatter.dateFormat = "HH:MM:SS a"
-        self.timeLabel.text = "Time: " + formatter.stringFromDate(now)
+        self.timeLabel.text = "Time: " + formatter.string(from: now)
     }
 }
+
+
+
+
+
+
 
